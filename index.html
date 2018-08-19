@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather</title>
+		<center id="temp">My Location: </center>
+		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+		<style>
+			#button1{
+				position:absolute;
+			    transition: .5s ease;
+			    top: 50%;
+				left: 45%;
+				width: calc(10%);
+				height: calc(4%);
+				
+			}
+			#button1:hover{background-color:lightsteelblue;}
+			#input1{
+				position:absolute;
+				transition: .5s ease;
+				top: 36%;
+				left: 37%;
+				width: calc(26%);
+				height: calc(10%);
+			}
+			#temp{
+				position:absolute;
+				transition: .5s ease;
+				top: 27%;
+				left: 50%;
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+			<input type="text" id="input1" style="font-size: 25px; text-align: center;"></input>
+			<button onclick="getWeather()" id="button1" value="Search">Search</button>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+					
+			function getWeather(){
+				$(document).ready(function(){
+				  var city = document.getElementById("input1").value;;
+				  var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'"
+				  //change city variable dynamically as required
+				  $.getJSON("http://query.yahooapis.com/v1/public/yql?q="+ searchtext + "&format=json").success(function(data){
+				   console.log(data);
+				   $('#temp').html("Temperature in " + city + " is " + data.query.results.channel.item.condition.temp + " degrees Celsius");
+				  });
+				});
+			}
+		</script>
+	</body>
+</html>
