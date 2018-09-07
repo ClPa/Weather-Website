@@ -1,0 +1,14 @@
+{
+  "name": "electron_app",
+  "version": "1.0.0",
+  "description": "Shopping List Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Paul Schatt",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^2.0.7"
+  }
+}
