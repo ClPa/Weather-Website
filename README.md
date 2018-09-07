@@ -1,6 +1,7 @@
 
 https://codepen.io/Ranjithkumar10/pen/MKbwQW
-
+# Website
+Just open index.html in your Browser.
 # Electron App
 
 Open Terminal and change directory
