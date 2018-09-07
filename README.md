@@ -1,8 +1,12 @@
+# Weather
 
+Inspired by this tutorial
 https://codepen.io/Ranjithkumar10/pen/MKbwQW
-# Website
+
+
+### Website
 Just open index.html in your Browser.
-# Electron App
+### Electron App
 
 Open Terminal and change directory
 ```
